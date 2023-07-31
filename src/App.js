@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import Home from './pages/Home';
-
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CustomerServices from './pages/CustomerServices';
@@ -21,37 +21,46 @@ import Luggage from './pages/Luggage';
 import Laundry from './pages/Laundry';
 import Assistance from './pages/Assistance';
 import Checkout from './pages/Checkout';
-
-
-
+import Error404 from './pages/Error404';
+import Success from './pages/Success';
 
 function App() {
   return (
+    <>
     <Router>
-       <ScrollToTop />
-        <Header />
+      <ScrollToTop />
+    
       <div className='container-page'>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/customer-services" element={<CustomerServices />} />
-          <Route path="/restaurant" element={<Restaurant />} />
-          <Route path="/need-assistance" element={<Assistance/>} />
-          <Route path="/hotel-experience" element={<HotelExperience />} />
-          <Route path="/experience-1" element={<Experience1 />} />
-          <Route path="/experience-2" element={<Experience2 />} />
-          <Route path="/experience-3" element={<Experience3 />} />
-          <Route path="/experience-4" element={<Experience4 />} />
-          <Route path="/experience-5" element={<Experience5 />} />
-          <Route path="/thanks-for-sharring" element={<ThanksForYourSharing/>} />
-          <Route path="/house-keeping-prefference" element={< HouseKeepingPrefference/>} />
-          <Route path="/prepare-my-checkout" element={< Checkout/>} />
-          <Route path="/retrieve-my-luggage" element={< Luggage/>} />
-          <Route path="/collecte-laundry" element={<Laundry/>} />
-          <Route path="/about" element={< About/>} />
+          <Route path="/:id" element={<Home />} />
+          <Route path="success/:id" element={<Success />} />
+          <Route path="/customer-services/:id" element={<CustomerServices />} />
+          <Route path="/restaurant/:id" element={<Restaurant />} />
+          <Route path="/need-assistance/:id" element={<Assistance />} />
+          <Route path="/hotel-experience/:id" element={<HotelExperience />} />
+          <Route path="/experience-1/:id" element={<Experience1 />} />
+          <Route path="/experience-2/:id" element={<Experience2 />} />
+          <Route path="/experience-3/:id" element={<Experience3 />} />
+          <Route path="/experience-4/:id" element={<Experience4 />} />
+          <Route path="/experience-5/:id" element={<Experience5 />} />
+          <Route path="/thanks-for-sharring/:id" element={<ThanksForYourSharing />} />
+          <Route path="/house-keeping-prefference/:id" element={<HouseKeepingPrefference />} />
+          <Route path="/prepare-my-checkout/:id" element={<Checkout />} />
+          <Route path="/retrieve-my-luggage/:id" element={<Luggage />} />
+          <Route path="/collecte-laundry/:id" element={<Laundry />} />
+          <Route path="/about/:id" element={<About />} />
+          <Route
+            path="/error/:id"
+            element={<Error404 />} // Page d'erreur
+            />
+          <Route path="/*" element={<Error404 />} /> {/* Redirection vers la page d'erreur pour tous les autres chemins non définis */}
+          <Route path="/undefined" element={<Error404 />} /> {/* Redirection vers la page d'erreur pour tous les autres chemins non définis */}
         </Routes>
       </div>
-      <Footer/>
+      <Footer />
     </Router>
+         <ToastContainer />
+            </>
   );
 }
 

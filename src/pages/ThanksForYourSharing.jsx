@@ -1,8 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import Header from "../components/Header";
 
 function ThanksForYourSharing() {
+
+  const params = useParams()
+
   return (
+    <>
+    <Header id={params.id}/>
     <div class="container container-rating">
       <h1 class="l-heading">
         <span class="text-primary">Thank You </span> for Completing the
@@ -38,6 +44,7 @@ function ThanksForYourSharing() {
       </div>
       <Link className="btn btn-skip" to={'/'}>Back</Link>
     </div>
+    </>
   );
 }
 

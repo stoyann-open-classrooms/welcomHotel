@@ -1,46 +1,64 @@
 import React, { useContext } from "react";
 import LanguageContext from "../context/LanguageContext";
 import translations from "../context/lang";
-import { Link } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Header from "../components/Header";
 
 function Experience1() {
   const { language } = useContext(LanguageContext);
-  const t = translations[language].experience1; // Utilisez la clé "home" pour accéder aux traductions spécifiques à la page d'accueil
+  const t = translations[language].experience1;
+  const params = useParams();
+  const navigate = useNavigate()
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const name = event.target.elements.name.value;
+    const email = event.target.elements.email.value;
+
+    const userData = { name, email };
+    const userDataJSON = JSON.stringify(userData);
+
+    localStorage.setItem("userData", userDataJSON);
+
+    // Show success toast
+    toast.success('Les données de contact ont été enregistrées avec succès !');
+
+    // Wait for 3 seconds before redirecting
+    setTimeout(() => {
+      navigate(`/${params.id}`);
+      // Refresh the page
+      window.location.reload();
+    }, 3000);
+  };
 
   return (
     <>
+      <Header id={params.id} />
       <div className="container">
-        <section className="questionnaire-container">
-          <p>{t.p1}</p>
-          <p>{t.p2}</p>
-          <p>{t.p3}</p>
-          <p>{t.p4}</p>
-        </section>
-
-        <section id="contact-form" class="py-3">
-          <div class="container">
-            <h1 class="l-heading">
-              <span class="text-primary">{t.titleSpan}</span> {t.title}
+        <section id="contact-form" className="py-3">
+          <div className="container">
+            <h1 className="l-heading">
+              <span className="text-primary">{t.titleSpan}</span> {t.title}
             </h1>
             <p>{t.subtittle}</p>
-            <form>
-              <div class="form-group">
-                <label for="name">{t.label1}</label>
-                <input type="text" name="name" id="name" />
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="name">{t.label1}</label>
+                <input type="text" name="name" id="name" required />
               </div>
-              <div class="form-group">
-                <label for="email">{t.label2}</label>
-                <input type="email" name="email" id="email" />
+              <div className="form-group">
+                <label htmlFor="email">{t.label2}</label>
+                <input type="email" name="email" id="email" required />
               </div>
-              <button type="submit" class="btn">
-                 {t.btnSubmit}
+              <button type="submit" className="btn btn-skip">
+                {t.btnSubmit}
               </button>
             </form>
           </div>
         </section>
-        <Link to={"/experience-2"} className="btn btn-skip">
-         {t.btnSkip}
-        </Link>
       </div>
     </>
   );

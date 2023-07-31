@@ -2,35 +2,55 @@ import React, { useContext } from "react";
 import Showcase from "../components/Showcase";
 import LanguageContext from "../context/LanguageContext";
 import translations from "../context/lang";
+import { useNavigate, useParams } from "react-router-dom";
+import Header from "../components/Header";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function Luggage() {
   const { language } = useContext(LanguageContext);
-  const t = translations[language].luggage; // Utilisez la clé "home" pour accéder aux traductions spécifiques à la page d'accueil
+  const t = translations[language].luggage;
+  const params = useParams();
+  const navigate = useNavigate();
+
+  // Récupérer l'objet JSON depuis le stockage local
+  const userDataJSON = localStorage.getItem('userData');
+
+  // Convertir l'objet JSON en objet JavaScript
+  const objet = JSON.parse(userDataJSON);
+
+
+
+  
   const handleConfirmClick = () => {
     const requestUrl =
-      'https://demo.clinotag.com/api/clinotag/Notification?location=%22Room%20501%22&notification=%22Retrieve%20my%20Luggage%22&name=John%20Doe&contact=john%40mail.com'
+      `https://demo.clinotag.com/api/clinotag/Notification?location=%22Room%20${params.id}%22&notification=%22Retrieve%20my%20Luggage%22&name=${objet.name}%20Doe&contact=${objet.email}`;
     
-      console.log(requestUrl);
+    console.log(requestUrl);
     fetch(requestUrl)
       .then((response) => {
-        // Handle the response here
         console.log(response);
+        toast.success("Votre demande a été envoyée avec succès !");
+        navigate(`/success/${params.id}`);
       })
       .catch((error) => {
-        // Handle the error here
         console.error("Error sending request:", error);
+        toast.error("Une erreur est survenue lors de l'envoi de votre demande.");
       });
   };
+
   return (
     <>
+      <Header id={params.id}/>
       <Showcase titleSpan={t.titleSpan} title={t.title} />
 
-      <div class="container container-confirm">
+      <div className="container container-confirm">
         <p className="big-texte">
           {t.txt}
         </p>
 
         <button className="btn btn-skip" onClick={handleConfirmClick}>
-        {t.btnTxt}
+          {t.btnTxt}
         </button>
       </div>
     </>

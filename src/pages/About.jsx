@@ -4,13 +4,16 @@ import samantha from  '../assets/person-1.jpg'
 import jen from  '../assets/person-2.jpg'
 import LanguageContext from "../context/LanguageContext";
 import translations from "../context/lang";
+import { useParams } from 'react-router-dom';
+import Header from '../components/Header';
 
 function About() {
   const { language } = useContext(LanguageContext);
   const t = translations[language].about; // Utilisez la clé "home" pour accéder aux traductions spécifiques à la page d'accueil
-
+   const params = useParams()
   return (
     <>
+    <Header id={params.id}/>
     <section id="about-info" class="bg-light py-3">
     <div class="container">
       <div class="info-left">

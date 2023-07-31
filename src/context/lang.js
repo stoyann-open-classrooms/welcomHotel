@@ -1,7 +1,16 @@
 const translations = {
   en: {
+    error: {
+      title: "Error 404",
+      subtitle: "Page not found",
+      btn: "Back to home",
+    },
+    success: {
+      title: "Request successfully completed.",
+      btn: "Back to home",
+    },
     header: {
-      title: "WELCOM HOTEL -ROOM 501",
+      title: "WELCOM HOTEL",
       link1: "Home",
       link2: "Restaurant",
       link3: "About",
@@ -12,6 +21,7 @@ const translations = {
     home: {
       titleSpan: "Enjoy",
       title: " Your stay",
+      room: "Room: ",
       subtitle:
         "Experience luxurious comfort and unparalleled hospitality at our exquisite hotel.",
       historySpan: "The History",
@@ -153,174 +163,184 @@ const translations = {
     },
   },
 
-
-
   th: {
+    error: {
+      title: "ข้อผิดพลาด 404",
+      subtitle: "ไม่พบหน้า",
+      btn: "กลับสู่หน้าหลัก",
+    },
+    success: {
+      title: "ดำเนินการสำเร็จ",
+      btn: "กลับสู่หน้าหลัก",
+    },
+
     header: {
-        title: "โรงแรมยินดีต้อนรับ - ห้อง 501",
-        link1: "หน้าหลัก",
-        link2: "ร้านอาหาร",
-        link3: "เกี่ยวกับ",
+      title: "โรงแรมยินดีต้อนรับ",
+      link1: "หน้าหลัก",
+      link2: "ร้านอาหาร",
+      link3: "เกี่ยวกับ",
     },
     footer: {
-        text: "โรงแรมยินดีต้อนรับ © 2023 สงวนลิขสิทธิ์ทั้งหมด",
+      text: "โรงแรมยินดีต้อนรับ © 2023 สงวนลิขสิทธิ์ทั้งหมด",
     },
     home: {
-        titleSpan: "สนุกไปกับ",
-        title: "การเข้าพักของคุณ",
-        subtitle:
-            "สัมผัสความสะดวกสบายที่หรูหราและการต้อนรับที่ไม่เหมือนใครที่โรงแรมที่ยอดเยี่ยมของเรา",
-        historySpan: "ประวัติศาสตร์",
-        historyTitle: "ของโรงแรมของเรา",
-        historyP1:
-            "โรงแรมของเรามีประวัติศาสตร์ยาวนาน มีต้นกำเนิดจากวิสัยทัศน์ที่ท้าทายของผู้ประกอบการจอห์น สมิธ ด้วยความมุ่งมั่นที่ไม่แพ้ใคร สมิธได้เปลี่ยนสถานที่ที่มีประวัติศาสตร์เป็นที่พักหรูหรา และจัดการให้เกิดความเป็นไปได้อย่างสง่างามและสบายๆ ตั้งแต่เริ่มต้นที่ต่ำ โรงแรมของเรากลายเป็นสัญลักษณ์ของความทันสมัยที่เสมอซึ่งตอนนี้",
-        historyP2:
-            "ตลอดประวัติศาสตร์ของโรงแรมของเรา มันเป็นที่พึ่งพาสำหรับบุคคลมีชื่อเสียงจากทุกชั้นของคนในชีวิต ตั้งแต่ศิลปินที่มีชื่อเสียงจนถึงผู้นำที่มีอิทธิพล เราต้องการต้อนรับแขกที่มองหาความสงบและความอ่อนโยน สถาปัตยกรรมที่สวยงามของโรงแรมที่เป็นเครื่องหมายแสดงถึงความอุตสาหะและความชำนาญที่เกี่ยวข้องกับการสร้างของมัน",
-        historyP3:
-            "ในขณะที่เรายอมรับความมีชีวิตชีวาของมัน โรงแรมของเรายังปรับตัวให้เข้ากับยุคสมัยที่ทันสมัยได้อย่างไม่มีเส้นตายตัด โดยผสมผสานความเป็นทางประเพณีกับสิ่งอำนวยความสะดวกที่ทันสมัย ด้วยสิ่งอำนวยความสะดวกที่ทันสมัย ที่พักหรูหราและทานอาหารอย่างละเอียดเรียบร้อย เรามุ่งมั่นที่จะเกินความคาดหวังของนักเดินทางที่มีอารมณ์อ่อนไหวในปัจจุบัน เรายังคงมีการให้บริการที่บุคลิกและการตอบสนองที่ไม่เปลี่ยนแปลง เพื่อให้แน่ใจว่าแขกทุกคนจะได้สัมผัสประสบการณ์การเข้าพักที่น่าจดจำและน่าเริ่มต้น",
-        homeBtn: "อ่านต่อ",
-        boxTitle1: "การตั้งค่าทำความสะอาด",
-        boxSubtitle1: "ปรับแต่งการบริการทำความสะอาดห้องพักของคุณ",
-        boxTitle2: "บริการลูกค้า",
-        boxSubtitle2: "การต้อนรับที่ไม่เหมือนใคร: การมุ่งมั่นของเราสู่ความพอใจที่สมบูรณ์ของคุณ",
-        boxTitle3: "แบ่งปันประสบการณ์การเข้าพักที่โรงแรมของคุณ",
-        boxSubtitle3: "ความคิดเห็นของคุณมีค่าและถูกใจ",
+      titleSpan: "สนุกไปกับ",
+      title: "การเข้าพักของคุณ",
+      room: "ห้อง",
+      subtitle:
+        "สัมผัสความสะดวกสบายที่หรูหราและการต้อนรับที่ไม่เหมือนใครที่โรงแรมที่ยอดเยี่ยมของเรา",
+      historySpan: "ประวัติศาสตร์",
+      historyTitle: "ของโรงแรมของเรา",
+      historyP1:
+        "โรงแรมของเรามีประวัติศาสตร์ยาวนาน มีต้นกำเนิดจากวิสัยทัศน์ที่ท้าทายของผู้ประกอบการจอห์น สมิธ ด้วยความมุ่งมั่นที่ไม่แพ้ใคร สมิธได้เปลี่ยนสถานที่ที่มีประวัติศาสตร์เป็นที่พักหรูหรา และจัดการให้เกิดความเป็นไปได้อย่างสง่างามและสบายๆ ตั้งแต่เริ่มต้นที่ต่ำ โรงแรมของเรากลายเป็นสัญลักษณ์ของความทันสมัยที่เสมอซึ่งตอนนี้",
+      historyP2:
+        "ตลอดประวัติศาสตร์ของโรงแรมของเรา มันเป็นที่พึ่งพาสำหรับบุคคลมีชื่อเสียงจากทุกชั้นของคนในชีวิต ตั้งแต่ศิลปินที่มีชื่อเสียงจนถึงผู้นำที่มีอิทธิพล เราต้องการต้อนรับแขกที่มองหาความสงบและความอ่อนโยน สถาปัตยกรรมที่สวยงามของโรงแรมที่เป็นเครื่องหมายแสดงถึงความอุตสาหะและความชำนาญที่เกี่ยวข้องกับการสร้างของมัน",
+      historyP3:
+        "ในขณะที่เรายอมรับความมีชีวิตชีวาของมัน โรงแรมของเรายังปรับตัวให้เข้ากับยุคสมัยที่ทันสมัยได้อย่างไม่มีเส้นตายตัด โดยผสมผสานความเป็นทางประเพณีกับสิ่งอำนวยความสะดวกที่ทันสมัย ด้วยสิ่งอำนวยความสะดวกที่ทันสมัย ที่พักหรูหราและทานอาหารอย่างละเอียดเรียบร้อย เรามุ่งมั่นที่จะเกินความคาดหวังของนักเดินทางที่มีอารมณ์อ่อนไหวในปัจจุบัน เรายังคงมีการให้บริการที่บุคลิกและการตอบสนองที่ไม่เปลี่ยนแปลง เพื่อให้แน่ใจว่าแขกทุกคนจะได้สัมผัสประสบการณ์การเข้าพักที่น่าจดจำและน่าเริ่มต้น",
+      homeBtn: "อ่านต่อ",
+      boxTitle1: "การตั้งค่าทำความสะอาด",
+      boxSubtitle1: "ปรับแต่งการบริการทำความสะอาดห้องพักของคุณ",
+      boxTitle2: "บริการลูกค้า",
+      boxSubtitle2:
+        "การต้อนรับที่ไม่เหมือนใคร: การมุ่งมั่นของเราสู่ความพอใจที่สมบูรณ์ของคุณ",
+      boxTitle3: "แบ่งปันประสบการณ์การเข้าพักที่โรงแรมของคุณ",
+      boxSubtitle3: "ความคิดเห็นของคุณมีค่าและถูกใจ",
     },
     about: {
-        titleSpan: "เกี่ยวกับ",
-        title: "โรงแรมยินดีต้อนรับ",
-        p: "ไม่ว่าคุณจะเดินทางเพื่อธุรกิจหรือเพื่อความสุข สถานประกอบการของเราถูกออกแบบให้ตอบโจทย์ทุกความต้องการของคุณ ห้องพักหรูหราและที่พักที่สะดวกสบายของเราจะเป็นสถานที่ที่ผ่อนคลายหลังจากวันที่ยาวนาน ในขณะเดียวกันทีมงานของเราก็พร้อมให้บริการเสมอ เพื่อให้การเข้าพักของคุณเป็นที่สมบูรณ์แบบ",
-        guestTitle: "คำพูดจากแขกของเรา",
-        guest1:
-            "โรงแรมนี้เกินความคาดหวังทั้งหมดของฉัน ตั้งแต่ที่ฉันมาถึงฉันถูกต้อนรับด้วยความอบอุ่นและความเป็นมืออาชีพ ห้องพักถูกตกแต่งอย่างมีรสนิยมและเป็นที่พักที่สบายสบายหลังจากวันที่เหนื่อยล้าจากการสำรวจเมือง บุคลากรทำหน้าที่เหนือชั้น พร้อมให้บริการเสมอ ฉันขอแนะนำโรงแรมนี้ให้กับผู้ที่มองหาประสบการณ์ที่น่าจดจำและสนุกสนาน",
-        guest2:
-            "ฉันมีการเข้าพักที่นี่ที่น่าเป็นที่สุด เรื่องราวละเอียดและระดับของบริการมีคุณภาพยอดเยี่ยม ห้องพักกว้างขวาง ตกแต่งอย่างทันสมัยและมีวิวที่งดงามของพื้นที่รอบๆ บุคลากรของโรงแรมใส่ใจ มีมิตรภาพและมีอยู่เสมอเพื่อช่วยเหลือในคำขอใดๆ ตั้งแต่อาหารเช้าอร่อย ไปจนถึงสิ่งอำนวยความสบายที่ผ่อนคลาย ทุกด้านของการเข้าพักของฉันเป็นสิริมงคล ฉันจะเลือกโรงแรมนี้อีกครั้งสำหรับการเยี่ยมชมในอนาคต",
+      titleSpan: "เกี่ยวกับ",
+      title: "โรงแรมยินดีต้อนรับ",
+      p: "ไม่ว่าคุณจะเดินทางเพื่อธุรกิจหรือเพื่อความสุข สถานประกอบการของเราถูกออกแบบให้ตอบโจทย์ทุกความต้องการของคุณ ห้องพักหรูหราและที่พักที่สะดวกสบายของเราจะเป็นสถานที่ที่ผ่อนคลายหลังจากวันที่ยาวนาน ในขณะเดียวกันทีมงานของเราก็พร้อมให้บริการเสมอ เพื่อให้การเข้าพักของคุณเป็นที่สมบูรณ์แบบ",
+      guestTitle: "คำพูดจากแขกของเรา",
+      guest1:
+        "โรงแรมนี้เกินความคาดหวังทั้งหมดของฉัน ตั้งแต่ที่ฉันมาถึงฉันถูกต้อนรับด้วยความอบอุ่นและความเป็นมืออาชีพ ห้องพักถูกตกแต่งอย่างมีรสนิยมและเป็นที่พักที่สบายสบายหลังจากวันที่เหนื่อยล้าจากการสำรวจเมือง บุคลากรทำหน้าที่เหนือชั้น พร้อมให้บริการเสมอ ฉันขอแนะนำโรงแรมนี้ให้กับผู้ที่มองหาประสบการณ์ที่น่าจดจำและสนุกสนาน",
+      guest2:
+        "ฉันมีการเข้าพักที่นี่ที่น่าเป็นที่สุด เรื่องราวละเอียดและระดับของบริการมีคุณภาพยอดเยี่ยม ห้องพักกว้างขวาง ตกแต่งอย่างทันสมัยและมีวิวที่งดงามของพื้นที่รอบๆ บุคลากรของโรงแรมใส่ใจ มีมิตรภาพและมีอยู่เสมอเพื่อช่วยเหลือในคำขอใดๆ ตั้งแต่อาหารเช้าอร่อย ไปจนถึงสิ่งอำนวยความสบายที่ผ่อนคลาย ทุกด้านของการเข้าพักของฉันเป็นสิริมงคล ฉันจะเลือกโรงแรมนี้อีกครั้งสำหรับการเยี่ยมชมในอนาคต",
     },
 
     restaurant: {
-        titleSpan: "ค้นพบ",
-        title: "ร้านอาหารของเรา",
-        btnTxt: "จองทันที",
-        subtitle: "เริ่มการเดินทางทางประสาทอาหารในร้านอาหารที่ยอดเยี่ยมของเรา",
-        menuTitle1: "เมนูอาหารเช้า",
-        menu1A: "เอ็กซ์เบเนดิคต์",
-        menu1B: "แพนเค้กกับน้ำเชื่อมเมเปิล",
-        menu1C: "สลัดผลไม้",
-        menuTitle2: "เมนูอาหารกลางวัน",
-        menu2A: "ซีซาร์สลัด",
-        menu2B: "แซนด์วิชไก่ย่าง",
-        menu2C: "พาสต้าอัลเฟรโด",
-        menuTitle3: "เมนูอาหารเย็น",
-        menu3A: "ซุปมะเขือเทศใบโบสถ์",
-        menu3B: "ฟิเลตมิงยอน",
-        menu3C: "ปลาแซลมอนย่าง",
-        },
-        hotelExperience: {
-        titleSpan: "แบ่งปัน",
-        title: "ประสบการณ์การเข้าพักของคุณ",
-        p: "เราให้ค่าการเข้าพักของคุณที่โรงแรมของเราและต้องการได้ยินความคิดเห็นของคุณ ประสบการณ์ของคุณมีค่าต่อเราและผู้เข้าพักอื่นๆในอนาคต โปรดแบ่งปันประสบการณ์ของคุณโดยกรอกแบบฟอร์มสั้นด้านล่าง พวกเรายินดีที่จะรับความคิดเห็นเกี่ยวกับบริการของเรา สิ่งอำนวยความสะดวกในโรงแรม คุณภาพการเข้าพักของคุณ หรือคำแนะนำอื่นๆ ที่คุณอาจมี ความคิดเห็นของคุณช่วยเราในการพัฒนาอย่างต่อเนื่องและให้ประสบการณ์ที่ดีที่สุดให้กับแขกของเรา ขอบคุณที่ใช้เวลาสักครู่ในการแบ่งปันประสบการณ์ของคุณกับเรา ทางเรายินหวังที่จะได้อ่านความคิดเห็นของคุณ",
-        txtBtn: "เริ่มแบบสำรวจ",
-        },
-        houseKeepingPrefference: {
-        titleSpan: "ความ",
-        title: "ต้องการบริการเรียบร้อย",
-        p: "โปรดคลิกที่หนึ่งในปุ่มด้านล่างหากคุณต้องการขอบริการเกี่ยวกับความสะอาดในห้องของคุณ หากคุณไม่ต้องการให้รบกวน โปรดระบุความต้องการของคุณโดยเลือกตัวเลือกที่เกี่ยวข้อง",
-        titleSpan1: "ทำความสะอาด",
-        title1: "ห้อง",
-        subtitle1:
+      titleSpan: "ค้นพบ",
+      title: "ร้านอาหารของเรา",
+      btnTxt: "จองทันที",
+      subtitle: "เริ่มการเดินทางทางประสาทอาหารในร้านอาหารที่ยอดเยี่ยมของเรา",
+      menuTitle1: "เมนูอาหารเช้า",
+      menu1A: "เอ็กซ์เบเนดิคต์",
+      menu1B: "แพนเค้กกับน้ำเชื่อมเมเปิล",
+      menu1C: "สลัดผลไม้",
+      menuTitle2: "เมนูอาหารกลางวัน",
+      menu2A: "ซีซาร์สลัด",
+      menu2B: "แซนด์วิชไก่ย่าง",
+      menu2C: "พาสต้าอัลเฟรโด",
+      menuTitle3: "เมนูอาหารเย็น",
+      menu3A: "ซุปมะเขือเทศใบโบสถ์",
+      menu3B: "ฟิเลตมิงยอน",
+      menu3C: "ปลาแซลมอนย่าง",
+    },
+    hotelExperience: {
+      titleSpan: "แบ่งปัน",
+      title: "ประสบการณ์การเข้าพักของคุณ",
+      p: "เราให้ค่าการเข้าพักของคุณที่โรงแรมของเราและต้องการได้ยินความคิดเห็นของคุณ ประสบการณ์ของคุณมีค่าต่อเราและผู้เข้าพักอื่นๆในอนาคต โปรดแบ่งปันประสบการณ์ของคุณโดยกรอกแบบฟอร์มสั้นด้านล่าง พวกเรายินดีที่จะรับความคิดเห็นเกี่ยวกับบริการของเรา สิ่งอำนวยความสะดวกในโรงแรม คุณภาพการเข้าพักของคุณ หรือคำแนะนำอื่นๆ ที่คุณอาจมี ความคิดเห็นของคุณช่วยเราในการพัฒนาอย่างต่อเนื่องและให้ประสบการณ์ที่ดีที่สุดให้กับแขกของเรา ขอบคุณที่ใช้เวลาสักครู่ในการแบ่งปันประสบการณ์ของคุณกับเรา ทางเรายินหวังที่จะได้อ่านความคิดเห็นของคุณ",
+      txtBtn: "เริ่มแบบสำรวจ",
+    },
+    houseKeepingPrefference: {
+      titleSpan: "ความ",
+      title: "ต้องการบริการเรียบร้อย",
+      p: "โปรดคลิกที่หนึ่งในปุ่มด้านล่างหากคุณต้องการขอบริการเกี่ยวกับความสะอาดในห้องของคุณ หากคุณไม่ต้องการให้รบกวน โปรดระบุความต้องการของคุณโดยเลือกตัวเลือกที่เกี่ยวข้อง",
+      titleSpan1: "ทำความสะอาด",
+      title1: "ห้อง",
+      subtitle1:
         "โปรดคลิกที่ปุ่มด้านล่างหากคุณต้องการขอบริการทำความสะอาดในห้องของคุณ",
-        titleSpan2: "โปรด",
-        title2: "อย่ารบกวน",
-        subtitle2:
-        "หากคุณไม่ต้องการให้รบกวน โปรดคลิกที่ปุ่มด้านล่าง",
-        txtBtn: "ส่งคำขอ",
-        },
-        customerServices: {
-        titleSpan: "บริการ",
-        title: "ลูกค้าสำหรับการเข้าพักของคุณ",
-        titleBox1: "เรียกรับกระเป๋าของฉัน",
-        subtitleBox1: "ปรับแต่งการบริการทำความสะอาดห้องของคุณ",
-        titleBox2: "เก็บผ้าผู้ใหญ่",
-        subtitleBox2: "ปรับแต่งการบริการทำความสะอาดห้องของคุณ",
-        titleBox3: "ต้องการความช่วยเหลือ",
-        subtitleBox3: "ปรับแต่งการบริการทำความสะอาดห้องของคุณ",
-        titleBox4: "เตรียมการชำระเงินของฉัน",
-        subtitleBox4: "ปรับแต่งการบริการทำความสะอาดห้องของคุณ",
-        },
-        luggage: {
-        titleSpan: "โปรด",
-        title: "เรียกรับกระเป๋าของฉัน",
-        titleBox1: "เรียกรับกระเป๋าของฉัน",
-        txt: "คลิก 'ยืนยัน' เพื่อขอความช่วยเหลือในการเรียกรับกระเป๋าของคุณ ทีมของเราจะดำเนินการตามคำขอของคุณและจัดเตรียมเจ้าหน้าที่ให้เก็บกระเป๋าของคุณให้",
-        btnTxt: "ยืนยัน",
-        },
-        laundry: {
-        titleSpan: "โปรด",
-        title: "เก็บผ้าผู้ใหญ่",
-        txt: "คลิก 'ยืนยัน' หากคุณต้องการให้เรานำผ้าเช็ดตัวสะอาดมาให้คุณ ทีมของเราจะจัดเตรียมผ้าเช็ดตัวสะอาดให้ถึงห้องของคุณโดยรวดเร็ว เพื่อให้คุณรู้สึกสบายในระหว่างการเข้าพักของคุณ",
-        btnTxt: "ยืนยัน",
-        },
+      titleSpan2: "โปรด",
+      title2: "อย่ารบกวน",
+      subtitle2: "หากคุณไม่ต้องการให้รบกวน โปรดคลิกที่ปุ่มด้านล่าง",
+      txtBtn: "ส่งคำขอ",
+    },
+    customerServices: {
+      titleSpan: "บริการ",
+      title: "ลูกค้าสำหรับการเข้าพักของคุณ",
+      titleBox1: "เรียกรับกระเป๋าของฉัน",
+      subtitleBox1: "ปรับแต่งการบริการทำความสะอาดห้องของคุณ",
+      titleBox2: "เก็บผ้าผู้ใหญ่",
+      subtitleBox2: "ปรับแต่งการบริการทำความสะอาดห้องของคุณ",
+      titleBox3: "ต้องการความช่วยเหลือ",
+      subtitleBox3: "ปรับแต่งการบริการทำความสะอาดห้องของคุณ",
+      titleBox4: "เตรียมการชำระเงินของฉัน",
+      subtitleBox4: "ปรับแต่งการบริการทำความสะอาดห้องของคุณ",
+    },
+    luggage: {
+      titleSpan: "โปรด",
+      title: "เรียกรับกระเป๋าของฉัน",
+      titleBox1: "เรียกรับกระเป๋าของฉัน",
+      txt: "คลิก 'ยืนยัน' เพื่อขอความช่วยเหลือในการเรียกรับกระเป๋าของคุณ ทีมของเราจะดำเนินการตามคำขอของคุณและจัดเตรียมเจ้าหน้าที่ให้เก็บกระเป๋าของคุณให้",
+      btnTxt: "ยืนยัน",
+    },
+    laundry: {
+      titleSpan: "โปรด",
+      title: "เก็บผ้าผู้ใหญ่",
+      txt: "คลิก 'ยืนยัน' หากคุณต้องการให้เรานำผ้าเช็ดตัวสะอาดมาให้คุณ ทีมของเราจะจัดเตรียมผ้าเช็ดตัวสะอาดให้ถึงห้องของคุณโดยรวดเร็ว เพื่อให้คุณรู้สึกสบายในระหว่างการเข้าพักของคุณ",
+      btnTxt: "ยืนยัน",
+    },
 
-        assistance: {
-            titleSpan: "ต้องการ",
-            title: "ความช่วยเหลือหรือไม่?",
-            txt: "หากคุณต้องการความช่วยเหลือ โปรดคลิกที่ 'ยืนยัน' ความพึงพอใจของคุณเป็นสิ่งสำคัญในสายตาของเรา และเรายินดีที่จะช่วยเหลือคุณด้วยบริการเพิ่มเติมนี้",
-            btnTxt: "ยืนยัน",
-            },
-            checkout: {
-            titleSpan: "โปรด",
-            title: "เตรียมการชำระเงินของฉัน",
-            txt: "ขอบคุณที่คลิก 'ยืนยัน' หากคุณต้องการให้เราเตรียมการชำระเงินของคุณและช่วยคุณไม่ต้องรอเวลาที่เคาน์เตอร์ต้อนรับ",
-            btnTxt: "ยืนยัน",
-            },
-            experience1: {
-            p1: "ยินดีต้อนรับสู่แบบสอบถามความคิดเห็นของโรงแรมของเรา! เราขอขอบคุณสำหรับเวลาที่คุณให้มาก และต้องการรวบรวมข้อคิดเห็นที่มีค่าของคุณ ความคิดเห็นของคุณช่วยเราปรับปรุงบริการของเราและสร้างประสบการณ์ที่พิเศษสำหรับแขกของเรา",
-            p2: "โปรดใช้เวลาสองนาทีเพื่อตอบคำถามเกี่ยวกับการเข้าพักของคุณ เราให้ความสำคัญกับความเป็นจริงของคุณ คำแนะนำ และพื้นที่ที่เราสามารถปรับปรุงได้",
-            p3: "ก่อนที่เราจะเริ่ม โปรดระบุข้อมูลติดต่อของคุณเพื่อให้เราสามารถติดต่อกลับหากจำเป็น กรุณาใส่ชื่อของคุณ ที่อยู่อีเมล และรายละเอียดเพิ่มเติมที่คุณต้องการแบ่งปันด้านล่าง",
-            p4: "ขอบคุณสำหรับความร่วมมือของคุณ เราหวังว่าจะได้ยินเกี่ยวกับประสบการณ์ของคุณ!",
-            titleSpan: "ข้อมูล",
-            title: "ติดต่อ",
-            subTitle: "โปรดกรอกแบบฟอร์มด้านล่างเพื่อติดต่อเรา",
-            label1: "ชื่อของคุณ",
-            label2: "อีเมลของคุณ",
-            btnSubmit: "ส่ง",
-            btnSkip: "ข้าม",
-            },
-            experience2: {
-            titleSpan: "โปรด",
-            title: "ให้คะแนนความสะอาดของห้องโรงแรม",
-            btnSkip: "ข้าม",
-            },
-            experience3: {
-              titleSpan: "Please ",
-              title: "rate the cleanliness of the hotel rooms",
-              btnSkip: "Skip",
-            },
-            experience4: {
-            titleSpan: "โปรด",
-            title: "ให้คะแนนคุณภาพการบริการของโรงแรม",
-            btnSkip: "ข้าม",
-            },
-            experience5: {
-            titleSpan: "โปรด",
-            title: "แสดงความคิดเห็น",
-            subtitle:
-            "สุดท้ายโปรดแสดงความคิดเห็นโดยละเอียดเกี่ยวกับการเข้าพักของคุณที่โรงแรม ความรู้สึก คำแนะนำ หรือความคิดเห็นอื่น ๆ ที่คุณต้องการแบ่งปัน",
-            submit: "ส่ง",
-            },
+    assistance: {
+      titleSpan: "ต้องการ",
+      title: "ความช่วยเหลือหรือไม่?",
+      txt: "หากคุณต้องการความช่วยเหลือ โปรดคลิกที่ 'ยืนยัน' ความพึงพอใจของคุณเป็นสิ่งสำคัญในสายตาของเรา และเรายินดีที่จะช่วยเหลือคุณด้วยบริการเพิ่มเติมนี้",
+      btnTxt: "ยืนยัน",
+    },
+    checkout: {
+      titleSpan: "โปรด",
+      title: "เตรียมการชำระเงินของฉัน",
+      txt: "ขอบคุณที่คลิก 'ยืนยัน' หากคุณต้องการให้เราเตรียมการชำระเงินของคุณและช่วยคุณไม่ต้องรอเวลาที่เคาน์เตอร์ต้อนรับ",
+      btnTxt: "ยืนยัน",
+    },
+    experience1: {
+      p1: "ยินดีต้อนรับสู่แบบสอบถามความคิดเห็นของโรงแรมของเรา! เราขอขอบคุณสำหรับเวลาที่คุณให้มาก และต้องการรวบรวมข้อคิดเห็นที่มีค่าของคุณ ความคิดเห็นของคุณช่วยเราปรับปรุงบริการของเราและสร้างประสบการณ์ที่พิเศษสำหรับแขกของเรา",
+      p2: "โปรดใช้เวลาสองนาทีเพื่อตอบคำถามเกี่ยวกับการเข้าพักของคุณ เราให้ความสำคัญกับความเป็นจริงของคุณ คำแนะนำ และพื้นที่ที่เราสามารถปรับปรุงได้",
+      p3: "ก่อนที่เราจะเริ่ม โปรดระบุข้อมูลติดต่อของคุณเพื่อให้เราสามารถติดต่อกลับหากจำเป็น กรุณาใส่ชื่อของคุณ ที่อยู่อีเมล และรายละเอียดเพิ่มเติมที่คุณต้องการแบ่งปันด้านล่าง",
+      p4: "ขอบคุณสำหรับความร่วมมือของคุณ เราหวังว่าจะได้ยินเกี่ยวกับประสบการณ์ของคุณ!",
+      titleSpan: "ข้อมูล",
+      title: "ติดต่อ",
+      subTitle: "โปรดกรอกแบบฟอร์มด้านล่างเพื่อติดต่อเรา",
+      label1: "ชื่อของคุณ",
+      label2: "อีเมลของคุณ",
+      btnSubmit: "ส่ง",
+      btnSkip: "ข้าม",
+    },
+    experience2: {
+      titleSpan: "โปรด",
+      title: "ให้คะแนนความสะอาดของห้องโรงแรม",
+      btnSkip: "ข้าม",
+    },
+    experience3: {
+      titleSpan: "Please ",
+      title: "rate the cleanliness of the hotel rooms",
+      btnSkip: "Skip",
+    },
+    experience4: {
+      titleSpan: "โปรด",
+      title: "ให้คะแนนคุณภาพการบริการของโรงแรม",
+      btnSkip: "ข้าม",
+    },
+    experience5: {
+      titleSpan: "โปรด",
+      title: "แสดงความคิดเห็น",
+      subtitle:
+        "สุดท้ายโปรดแสดงความคิดเห็นโดยละเอียดเกี่ยวกับการเข้าพักของคุณที่โรงแรม ความรู้สึก คำแนะนำ หรือความคิดเห็นอื่น ๆ ที่คุณต้องการแบ่งปัน",
+      submit: "ส่ง",
+    },
   },
 
-
-
-
-
-
-
-
-
   ITY: {
+    error: {
+      title: "Errore 404",
+      subtitle: "Pagina non trovata",
+      btn: "Torna alla pagina iniziale",
+    },
+    success: {
+      title: "Richiesta completata con successo",
+      btn: "Torna alla pagina iniziale",
+    },
     header: {
-      title: "WELCOM HOTEL - STANZA 501",
+      title: "WELCOM HOTEL",
       link1: "Home",
       link2: "Ristorante",
       link3: "Informazioni",
@@ -331,6 +351,7 @@ const translations = {
     home: {
       titleSpan: "Goditi",
       title: "Il tuo soggiorno",
+      room: "stanza : ",
       subtitle:
         "Vivi il comfort lussuoso e l'ospitalità senza pari del nostro squisito hotel.",
       historySpan: "La Storia",
@@ -394,94 +415,94 @@ const translations = {
       btn3: "Nessun servizio di pulizia",
     },
     customerServices: {
-        titleSpan: "Servizi ",
-        title: "per il tuo soggiorno",
-        titleBox1: "Ritiro dei bagagli",
-        subtitleBox1: "Personalizza il servizio di pulizia della tua camera.",
-        titleBox2: "Ritiro del bucato",
-        subtitleBox2: "Personalizza il servizio di pulizia della tua camera.",
-        titleBox3: "Assistenza necessaria",
-        subtitleBox3: "Personalizza il servizio di pulizia della tua camera.",
-        titleBox4: "Preparazione del check-out",
-        subtitleBox4: "Personalizza il servizio di pulizia della tua camera.",
-        },
-        luggage: {
-        titleSpan: "Si prega di ",
-        title: "Ritirare i bagagli",
-        titleBox1: "Ritiro dei bagagli",
-        txt: "Fai clic su 'Conferma' per richiedere assistenza nel ritiro dei tuoi bagagli. Il nostro team elaborerà la tua richiesta e organizzerà un incaricato per raccogliere i tuoi bagagli per conto tuo.",
-        btnTxt: "Conferma",
-        },
-        laundry: {
-        titleSpan: "Si prega di ",
-        title: "Ritirare il bucato",
-        txt: "Fai clic su 'Conferma' se desideri che ti portiamo degli asciugamani puliti. Il nostro team dedicato provvederà prontamente a consegnarti degli asciugamani puliti nella tua camera, garantendo il massimo comfort durante il tuo soggiorno.",
-        btnTxt: "Conferma",
-        },
-        assistance: {
-        titleSpan: "Assistenza ",
-        title: "necessaria?",
-        txt: "Se hai bisogno di assistenza, fai clic su Conferma. La tua soddisfazione è la nostra priorità e saremo lieti di assisterti con questo servizio aggiuntivo.",
-        btnTxt: "Conferma",
-        },
-        checkout: {
-        titleSpan: "Si prega di ",
-        title: "Preparare il check-out",
-        txt: "Grazie per aver cliccato su 'Conferma' se desideri che prepariamo il tuo check-out e ti risparmiamo l'attesa alla reception.",
-        btnTxt: "Conferma",
-        },
-        experience1: {
-        p1: "Benvenuti nel questionario di feedback del nostro hotel! Apprezziamo molto il vostro tempo e desideriamo raccogliere le vostre preziose opinioni. Il vostro feedback ci aiuta a migliorare i nostri servizi e a creare esperienze eccezionali per i nostri ospiti.",
-        p2: "Dedicate qualche minuto a rispondere alle seguenti domande sul vostro soggiorno. Valutiamo le vostre opinioni sincere, i suggerimenti e eventuali aree specifiche in cui possiamo migliorare.",
-        p3: "Prima di iniziare, forniteci le vostre informazioni di contatto in modo che possiamo darvi seguito se necessario. Inserite gentilmente il vostro nome, indirizzo email e eventuali dettagli aggiuntivi che desiderate condividere di seguito.",
-        p4: "Grazie per la vostra partecipazione e non vediamo l'ora di conoscere la vostra esperienza!",
-        titleSpan: "Informazioni di ",
-        title: "Contatto",
-        subTitle: "Compila il modulo sottostante per contattarci",
-        label1: "Il tuo nome",
-        label2: "La tua email",
-        btnSubmit: "Invia",
-        btnSkip: "Salta",
-        },
-        experience2: {
-        titleSpan: "Si prega di ",
-        title: "valutare la pulizia delle camere dell'hotel",
-        btnSkip: "Salta",
-        },
-        experience3: {
-          titleSpan: "Please ",
-          title: "rate the cleanliness of the hotel rooms",
-          btnSkip: "Skip",
-        },
-        experience4: {
-        titleSpan: "Si prega di ",
-        title: "valutare la qualità del servizio clienti dell'hotel",
-        btnSkip: "Salta",
-        },
-        experience5: {
-        titleSpan: "Si prega di ",
-        title: "lasciare un commento.",
-        subtitle:
+      titleSpan: "Servizi ",
+      title: "per il tuo soggiorno",
+      titleBox1: "Ritiro dei bagagli",
+      subtitleBox1: "Personalizza il servizio di pulizia della tua camera.",
+      titleBox2: "Ritiro del bucato",
+      subtitleBox2: "Personalizza il servizio di pulizia della tua camera.",
+      titleBox3: "Assistenza necessaria",
+      subtitleBox3: "Personalizza il servizio di pulizia della tua camera.",
+      titleBox4: "Preparazione del check-out",
+      subtitleBox4: "Personalizza il servizio di pulizia della tua camera.",
+    },
+    luggage: {
+      titleSpan: "Si prega di ",
+      title: "Ritirare i bagagli",
+      titleBox1: "Ritiro dei bagagli",
+      txt: "Fai clic su 'Conferma' per richiedere assistenza nel ritiro dei tuoi bagagli. Il nostro team elaborerà la tua richiesta e organizzerà un incaricato per raccogliere i tuoi bagagli per conto tuo.",
+      btnTxt: "Conferma",
+    },
+    laundry: {
+      titleSpan: "Si prega di ",
+      title: "Ritirare il bucato",
+      txt: "Fai clic su 'Conferma' se desideri che ti portiamo degli asciugamani puliti. Il nostro team dedicato provvederà prontamente a consegnarti degli asciugamani puliti nella tua camera, garantendo il massimo comfort durante il tuo soggiorno.",
+      btnTxt: "Conferma",
+    },
+    assistance: {
+      titleSpan: "Assistenza ",
+      title: "necessaria?",
+      txt: "Se hai bisogno di assistenza, fai clic su Conferma. La tua soddisfazione è la nostra priorità e saremo lieti di assisterti con questo servizio aggiuntivo.",
+      btnTxt: "Conferma",
+    },
+    checkout: {
+      titleSpan: "Si prega di ",
+      title: "Preparare il check-out",
+      txt: "Grazie per aver cliccato su 'Conferma' se desideri che prepariamo il tuo check-out e ti risparmiamo l'attesa alla reception.",
+      btnTxt: "Conferma",
+    },
+    experience1: {
+      p1: "Benvenuti nel questionario di feedback del nostro hotel! Apprezziamo molto il vostro tempo e desideriamo raccogliere le vostre preziose opinioni. Il vostro feedback ci aiuta a migliorare i nostri servizi e a creare esperienze eccezionali per i nostri ospiti.",
+      p2: "Dedicate qualche minuto a rispondere alle seguenti domande sul vostro soggiorno. Valutiamo le vostre opinioni sincere, i suggerimenti e eventuali aree specifiche in cui possiamo migliorare.",
+      p3: "Prima di iniziare, forniteci le vostre informazioni di contatto in modo che possiamo darvi seguito se necessario. Inserite gentilmente il vostro nome, indirizzo email e eventuali dettagli aggiuntivi che desiderate condividere di seguito.",
+      p4: "Grazie per la vostra partecipazione e non vediamo l'ora di conoscere la vostra esperienza!",
+      titleSpan: "Informazioni di ",
+      title: "Contatto",
+      subTitle: "Compila il modulo sottostante per contattarci",
+      label1: "Il tuo nome",
+      label2: "La tua email",
+      btnSubmit: "Invia",
+      btnSkip: "Salta",
+    },
+    experience2: {
+      titleSpan: "Si prega di ",
+      title: "valutare la pulizia delle camere dell'hotel",
+      btnSkip: "Salta",
+    },
+    experience3: {
+      titleSpan: "Please ",
+      title: "rate the cleanliness of the hotel rooms",
+      btnSkip: "Skip",
+    },
+    experience4: {
+      titleSpan: "Si prega di ",
+      title: "valutare la qualità del servizio clienti dell'hotel",
+      btnSkip: "Salta",
+    },
+    experience5: {
+      titleSpan: "Si prega di ",
+      title: "lasciare un commento.",
+      subtitle:
         "Infine, fornisci un commento dettagliato sul tuo soggiorno presso l'hotel. Sono benvenute le tue impressioni, i suggerimenti o qualsiasi altro feedback.",
-        submit: "Invia",
-        },
-        
+      submit: "Invia",
+    },
   },
 
-
-
-
-
-
-
-
-
   fr: {
+    error: {
+      title: "Erreur 404",
+      subtitle: "Page non trouvée",
+      btn: "Retour à l'accueil",
+    },
+    success: {
+      title: "Demande effectuée avec succès",
+      btn: "Retour à l'accueil",
+    },
     footer: {
       text: "Welcome Hotel © 2023, Tous droits réservés",
     },
     header: {
-      title: "WELCOM Hôtel - Chambre 501",
+      title: "WELCOM Hôtel",
       link1: "Accueil",
       link2: "Restaurant",
       link3: "À propos",
@@ -489,6 +510,7 @@ const translations = {
     home: {
       titleSpan: "Profitez",
       title: " de votre séjour",
+      room: "Chambre : ",
       subtitle:
         "Vivez le confort luxueux et une hospitalité inégalée dans notre hôtel exquis.",
       historySpan: "L'histoire ",
@@ -627,7 +649,7 @@ const translations = {
       title: "Merci d'évaluer la qualité des équipements",
       btnSkip: "Passer",
     },
-  
+
     experience5: {
       titleSpan: "Veuillez ",
       title: "laisser un commentaire.",
@@ -637,11 +659,20 @@ const translations = {
     },
   },
   de: {
+    error: {
+      title: "Fehler 404",
+      subtitle: "Seite nicht gefunden",
+      btn: "Zurück zur Startseite",
+    },
+    success: {
+      title: "Anfrage erfolgreich abgeschlossen",
+      btn: "Zurück zur Startseite",
+    },
     footer: {
       text: "Willkommen Hotel © 2023, Alle Rechte vorbehalten",
     },
     header: {
-      title: "WILLKOMMEN Hotel - Zimmer 501",
+      title: "WILLKOMMEN Hotel",
       link1: "Startseite",
       link2: "Restaurant",
       link3: "Über uns",
@@ -649,6 +680,7 @@ const translations = {
     home: {
       titleSpan: "Genießen Sie ",
       title: " Ihren Aufenthalt",
+      room: "Zimmer : ",
       subtitle:
         "Erleben Sie luxuriösen Komfort und beispiellose Gastfreundschaft in unserem exquisiten Hotel.",
       historySpan: "Die Geschichte",
@@ -794,16 +826,25 @@ const translations = {
       title: "hinterlassen Sie einen Kommentar.",
       subtitle:
         "Zu guter Letzt geben Sie bitte einen ausführlichen Kommentar zu Ihrem Aufenthalt im Hotel ab. Ihre Eindrücke, Vorschläge oder jegliches Feedback sind willkommen.",
-        submit: "Absenden",
+      submit: "Absenden",
     },
   },
 
   jp: {
+    error: {
+      title: "エラー404",
+      subtitle: "ページが見つかりません",
+      btn: "ホームに戻る",
+    },
+    success: {
+      title: "リクエストが正常に完了しました",
+      btn: "ホームに戻る",
+    },
     footer: {
       text: "ウェルカムホテル © 2023、全著作権所有",
     },
     header: {
-      title: "ウェルカムホテル - ルーム501",
+      title: "ウェルカムホテル",
       link1: "ホーム",
       link2: "レストラン",
       link3: "会社概要",
@@ -812,6 +853,7 @@ const translations = {
       titleSpan: "お楽しみください",
       title: "ご滞在を",
       subtitle: "当施設での贅沢な快適さと比類なきおもてなしをご体験ください。",
+      room: "部屋 : ",
       historySpan: "歴史",
       historyTitle: "当ホテルの歴史",
       historyP1:
@@ -952,7 +994,7 @@ const translations = {
       title: "残してください。",
       subtitle:
         "最後に、ホテルでの滞在についての詳細なコメントをお願いします。ご感想、提案、その他のフィードバックをお待ちしております。",
-        submit: "送信",
+      submit: "送信",
     },
   },
 };

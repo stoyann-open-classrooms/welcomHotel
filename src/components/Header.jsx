@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import LanguageContext from "../context/LanguageContext";
 import translations from "../context/lang";
 
-function Header() {
+function Header({id}) {
   const { language, changeLanguage } = useContext(LanguageContext);
   const t = translations[language].header; // Utilisez la clé "header" pour accéder aux traductions spécifiques à l'en-tête
 
@@ -19,13 +19,13 @@ function Header() {
           <h1 className="logo">{t.title}</h1>
           <ul>
             <li>
-              <Link to={"/"}>{t.link1}</Link>
+              <Link to={`/${id}`}>{t.link1}</Link>
             </li>
             <li>
-              <Link to={"/restaurant"}>{t.link2}</Link>
+              <Link to={`/restaurant/${id}`}>{t.link2}</Link>
             </li>
             <li>
-              <Link to={"/about"}>{t.link3}</Link>
+              <Link to={`/about/${id}`}>{t.link3}</Link>
             </li>
             <li>
               <select

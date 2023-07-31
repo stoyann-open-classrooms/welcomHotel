@@ -1,13 +1,16 @@
 import React, { useContext } from "react";
 import LanguageContext from "../context/LanguageContext";
 import translations from "../context/lang";
+import { useParams } from "react-router-dom";
+import Header from "../components/Header";
 
 function Restaurant() {
   const { language } = useContext(LanguageContext);
-  const t = translations[language].restaurant; // Utilisez la clé "home" pour accéder aux traductions spécifiques à la page d'accueil
-
+  const t = translations[language].restaurant; 
+  const params = useParams()
   return (
     <>
+    <Header id={params.id}/>
       <div id="showcase-restaurant">
     <div class="container">
       <div class="showcase-content">
