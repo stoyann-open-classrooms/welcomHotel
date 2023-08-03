@@ -32,7 +32,7 @@ function Home() {
         roomNumber={params.id}
         text={t.subtitle}
       />
-      <Link to={`http://localhost:3000/experience-1/${params.id}`} type="submit" className="btn btn-info btn-skip">
+      <Link to={`https://welcom.nc/experience-1/${params.id}`} type="submit" className="btn btn-info btn-skip">
         Add Your Contact Information
       </Link>
       <section id="home-info" className="bg-dark">
